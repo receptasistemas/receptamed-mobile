@@ -1,0 +1,30 @@
+workflows:
+  ios-compile-check:
+    name: ReceptaMed - validar iOS sem assinatura
+    instance_type: mac_mini_m2
+    max_build_duration: 30
+    environment:
+      xcode: latest
+    scripts:
+      - name: Compilar para simulador (nao instala em iPhone)
+        script: |
+          xcodebuild -project ios/ReceptaMed.xcodeproj -scheme ReceptaMed -configuration Debug -sdk iphonesimulator -destination 'generic/platform=iOS Simulator' -derivedDataPath build CODE_SIGNING_ALLOWED=NO build
+    artifacts:
+      - build/Build/Products/Debug-iphonesimulator/*.app
+  ios-signed-ipa:
+    name: ReceptaMed - IPA assinado (requer conta Apple e perfis)
+    instance_type: mac_mini_m2
+    max_build_duration: 30
+    environment:
+      xcode: latest
+      ios_signing:
+        distribution_type: app_store
+        bundle_identifier: br.com.receptasistemas.receptamed
+    scripts:
+      - name: Aplicar certificados e perfis cadastrados no Codemagic
+        script: xcode-project use-profiles
+      - name: Gerar IPA
+        script: xcode-project build-ipa --project ios/ReceptaMed.xcodeproj --scheme ReceptaMed
+    artifacts:
+      - build/ios/ipa/*.ipa
+      - /tmp/xcodebuild_logs/*.log

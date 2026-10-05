@@ -1,0 +1,33 @@
+RECEPTAMED — PREPARAÇÃO APP STORE — 05/10/2026
+Estado: preparação parcial, NÃO pronto para submissão.
+
+PREPARADO
+Projeto SwiftUI/UIKit, iOS 16+, iPhone/iPad.
+Nome no aparelho: ReceptaMed. Bundle proposto: br.com.receptasistemas.receptamed (ainda não registrado na Apple).
+Ícone 1024 incluído, versão 1.0.0 build 2.
+Removida barra Voltar/Atualizar/Navegador; gesto lateral de retorno mantido.
+Aviso de conexão com tentativa novamente. Capa de privacidade ao sair do app para ocultar conteúdo na visualização de apps recentes (exige validação em aparelho).
+HTTPS e domínio interno restrito. Nenhuma chave de serviço incluída no aplicativo.
+Codemagic: compilação de simulador sem assinatura e workflow IPA com assinatura. Nenhum workflow executado nesta entrega.
+
+PRÓXIMOS PASSOS TÉCNICOS — NÃO DEPENDEM APENAS DA ASSINATURA
+1. Executar ios-compile-check em Mac/CI e corrigir erros reais. Este ambiente Linux não tem SDK iOS/Xcode; não foi possível compilar aqui. É necessário conectar um repositório e uma conta de CI Mac.
+2. Implementar e validar exclusão de conta pelo app: reautenticação, confirmação explícita, revogação de sessões e convites, tratamento de proprietário/equipe e política de retenção dos registros da clínica. Não confundir inativação de secretária com exclusão da conta.
+3. Definir a cobrança iOS: implementar StoreKit para Premium ou adequar um aplicativo complementar sem checkout nem chamadas de compra externa, se aplicável. O site atual é carregado integralmente; ainda NÃO há separação de cobrança iOS. Não enviar à revisão assim.
+4. Publicar política de privacidade específica com responsável e contato, dados coletados, prestadores, finalidades, retenção e canal de direitos. Preencher App Privacy com base no fluxo completo do backend, não apenas nos SDKs nativos. Dados de pacientes e agendamentos devem ser considerados; não declarar "nenhum dado coletado".
+5. Revisar funcionalidade mínima 4.2: o cliente continua híbrido, não foi transformado em telas nativas. Remover toolbar/capa de privacidade não garante aceitação. Exportação PDF/Excel e impressão ainda precisam de implementação e testes no iOS.
+6. Validar login, confirmação de email, recuperação, convite, permissões, isolamento entre clínicas, expiração do Premium, teclado, rolagem, orientação e VoiceOver.
+7. Gerar screenshots REAIS do build no simulador/iPhone com dados fictícios. Não enviar imagens simuladas de funções inexistentes.
+8. Criar credenciais de revisão dedicadas e dados fictícios. Não incluir senha neste pacote.
+
+DEPENDÊNCIAS DA CONTA APPLE
+Adesão Apple Developer, App ID, certificados/perfis, registro no App Store Connect, assinatura IPA, TestFlight e revisão. Senhas e códigos 2FA devem ser inseridos diretamente no serviço. Não colocar certificados/chaves no Git.
+Conta individual exibe nome legal do vendedor. Identidade de organização depende de elegibilidade da Apple.
+
+PUBLICAÇÃO CONTROLADA
+Usar TestFlight antes de produção. Deixar lançamento manual. Não enviar para revisão antes dos itens acima; o YAML não publica automaticamente.
+
+FONTES OFICIAIS
+https://developer.apple.com/app-store/review/guidelines/
+https://developer.apple.com/programs/enroll/
+https://docs.codemagic.io/yaml-quick-start/building-a-native-ios-app/

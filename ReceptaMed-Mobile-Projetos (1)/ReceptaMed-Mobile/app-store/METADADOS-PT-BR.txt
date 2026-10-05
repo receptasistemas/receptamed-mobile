@@ -1,0 +1,20 @@
+RASCUNHO — conferir com o build validado antes de enviar
+Nome: ReceptaMed
+Subtítulo: Agenda para clínicas
+Categoria sugerida: Produtividade
+Palavras-chave: agenda,consultório,clínica,agendamento,secretária,pacientes,horários
+
+Descrição:
+Organize a rotina do consultório com o ReceptaMed.
+Consulte agendamentos, confira horários disponíveis e acompanhe a agenda dos profissionais em um só lugar. Cadastre pacientes, organize convênios e gerencie o acesso da equipe conforme as permissões da clínica.
+O sistema oferece recursos de reagendamento, encaixes e lista de espera para apoiar o trabalho da recepção.
+Requer conta ReceptaMed e conexão com a internet. A disponibilidade de funções depende das permissões do usuário e do plano da clínica.
+
+Suporte: https://agendaflow-central-demo.vini-saccomani.chatgpt.site/contato
+Marketing: https://agendaflow-central-demo.vini-saccomani.chatgpt.site/
+Privacidade: PENDENTE de publicação e revisão. Não substituir automaticamente por termos de uso.
+Copyright: PENDENTE de confirmação do titular legal.
+
+Notas para revisão (completar somente depois da validação):
+Aplicativo destinado à administração de agendamentos de consultórios e clínicas, não destinado a diagnóstico ou orientação médica. Acesso por email/senha. Fornecer usuário de revisão com clínica fictícia e acesso a todas as funções submetidas.
+Explicar o modelo comercial definitivo e as limitações reais. Não afirmar que a cobrança foi adaptada até implementação.
